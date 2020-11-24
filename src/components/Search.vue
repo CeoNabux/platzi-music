@@ -1,6 +1,5 @@
 <template lang="pug">
-  #app
-    pm-header
+  main
 
     pm-notification(v-show="showNotification")
       p(slot='body') No se encontraron resultados
@@ -29,27 +28,22 @@
             :class="{'is-active': t.id == selectedTrack}",
             v-on:select="setSelectedTrack")
 
-    pm-footer
 </template>
 
 <script>
-import trackService from './services/track.js'
+import trackService from '@/services/track.js'
 
-import PmFooter from './components/layout/Footer.vue'
-import PmHeader from './components/layout/Header.vue'
 
-import PmTrack from './components/Track.vue'
+import PmTrack from '@/components/Track.vue'
 
-import PmLoader from './components/share/Loader.vue'
-import PmNotification from './components/share/Notification.vue'
+import PmLoader from '@/components/share/Loader.vue'
+import PmNotification from '@/components/share/Notification.vue'
 
 
 export default {
-  name: 'App',
+  name: 'app',
 
   components: {
-    PmFooter,
-    PmHeader,
     PmTrack,
     PmLoader,
     PmNotification
@@ -105,11 +99,6 @@ export default {
 
 </script>
 
-<style>
-  .results{
-    margin-top: 50px;
-  }
-  .is-active{
-    border: 3px solid #23d160
-  }
+<style scoped>
+
 </style>
