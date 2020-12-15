@@ -7,6 +7,8 @@
             .navbar-item
               strong Platzi music
           .navbar-right.nav-menu
+            router-link.navbar-item(to="/") Buscar
+            router-link.navbar-item(to="about") Nosotros
 
     .hero-body
       .container.has-text-centered

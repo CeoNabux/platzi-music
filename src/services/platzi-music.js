@@ -1,5 +1,5 @@
 import trae from 'trae'
-import configService from './config'
+import configService from '@/services/config'
 
 const platziMusicService = trae.create({
   baseUrl: configService.apiUrl

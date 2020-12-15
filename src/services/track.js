@@ -1,8 +1,8 @@
-import platziMusicService from './platzi-music'
+import platziMusicService from '@/services/platzi-music'
 
-const trasckService = {}
+const trackService = {}
 
-trasckService.search = function(q) {
+trackService.search = function(q) {
   const type = 'track'
 
   return platziMusicService.get('/search', {
@@ -11,4 +11,10 @@ trasckService.search = function(q) {
   .then(res => res.data)
 }
 
-export default trasckService
+
+trackService.getById = function (id) {
+  return platziMusicService.get(`/track/${id}`)
+    .then(res => res.data)
+}
+
+export default trackService
